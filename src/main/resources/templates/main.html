@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Weather Application</title>
+
+    <style>
+        input[type=text], select {
+            width: 15%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 10%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+
+<div th:if="${message != null}">
+    <h1 style="color: red" th:text="${message}"></h1>
+</div>
+
+<form th:action="@{/weather}">
+    <p style="color: green; font-size:160%">
+        Enter city name<br>
+        <input style="color: green" type="text" th:name="city"/>
+        <input type="submit" th:value="Search"/>
+    </p>
+</form>
+
+<div th:if="${weatherData != null}">
+
+    <h1 style="color: blue" th:text="'Weather Data for ' + ${weatherData.getCity()} + ', ' + ${weatherData.getCountry()}"></h1>
+
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>
