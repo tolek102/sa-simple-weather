@@ -10,7 +10,7 @@ import lombok.Value;
 public class WeatherData {
 
     Double temp;
-    Double feelsLike;
+    Double perceivedTemp;
     Double tempMin;
     Double tempMax;
     Integer humidity;

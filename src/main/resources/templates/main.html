@@ -34,8 +34,8 @@
 </head>
 <body>
 
-<div th:if="${message != null}">
-    <h1 style="color: red" th:text="${message}"></h1>
+<div th:if="${weatherData.getErrorMessage() != null}">
+    <h1 style="color: red" th:text="${weatherData.getErrorMessage()}"></h1>
 </div>
 
 <form th:action="@{/weather}">
@@ -46,17 +46,19 @@
     </p>
 </form>
 
-<div th:if="${weatherData != null}">
+<div th:if="${weatherData.getErrorMessage() == null}">
 
     <h1 style="color: blue" th:text="'Weather Data for ' + ${weatherData.getCity()} + ', ' + ${weatherData.getCountry()}"></h1>
+    <img th:src="${weatherData.getIconUrl()}">
 
-
-
-
-
-
-
-
+    <p th:text="'Temperature: ' + ${weatherData.getTemp()}"></p>
+    <p th:text="'Perceived temperature: ' + ${weatherData.getPerceivedTemp()}"></p>
+    <p th:text="'Min temperature: ' + ${weatherData.getTempMin()}"></p>
+    <p th:text="'Max temperature: ' + ${weatherData.getTempMax()}"></p>
+    <p th:text="'Humidity: ' + ${weatherData.getHumidity()}"></p>
+    <p th:text="'Pressure: ' + ${weatherData.getPressure()}"></p>
+    <p th:text="'Wind Direction: ' + ${weatherData.getWindDirection()}"></p>
+    <p th:text="'Wind Speed: ' + ${weatherData.getWindSpeed()}"></p>
 
 </div>
 

@@ -13,6 +13,7 @@ public class OpenWeatherResponse {
 	private List<WeatherItem> weather;
 	private String name;
 	private int cod;
+	private String message;
 	private String base;
 	private Wind wind;
 }
