@@ -46,7 +46,7 @@
     </p>
 </form>
 
-<div th:if="${weatherData.getErrorMessage() == null}">
+<div th:if="${weatherData.getCity() != null}">
 
     <h1 style="color: blue" th:text="'Weather Data for ' + ${weatherData.getCity()} + ', ' + ${weatherData.getCountry()}"></h1>
     <img th:src="${weatherData.getIconUrl()}">

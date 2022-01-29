@@ -17,7 +17,7 @@ public class WeatherController {
 
     @GetMapping("/")
     public String getMainPage(final Model model) {
-        model.addAttribute("weatherData", null);
+        model.addAttribute("weatherData", WeatherData.builder().build());
 
         return "main";
     }
